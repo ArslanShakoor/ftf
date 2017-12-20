@@ -81,9 +81,10 @@ class Main extends Component {
   };
 
   firstAndLast = arr => {
-    if (arr) {
+    if (arr != null && arr.length > 0) {
       return [arr[0], arr[arr.length - 1]]; //No need for new Array(), and you can just assign items in positions inline
     }
+    return null;
   };
   firstTen = arr => {
     if (arr) {
@@ -92,8 +93,9 @@ class Main extends Component {
   };
 
   renderForm1 = (stocks, columns, rows) => {
-    if (stocks == null) {
-      return 'asd';
+    console.log(stocks);
+    if (stocks == null || stocks.length < 1) {
+      return null;
     }
     return (
       <ReactTable data={stocks} columns={columns} defaultPageSize={rows} />
