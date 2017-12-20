@@ -28,42 +28,6 @@ module.exports = app => {
     });
   });
 
-  app.get('/api/two_stock/:date1/:date2/:ticker', async (req, res) => {
-    console.log('asd');
-    let date1 = req.params.date1;
-    let date2 = req.params.date2;
-    const ticker = req.params.ticker;
-
-    console.log(ticker);
-
-    var newDate1 = date1.split('-').join('/');
-    console.log(newDate1);
-
-    var newDate2 = date2.split('-').join('/');
-    console.log(newDate2);
-
-    Stock.findOne({ symbol: ticker }, function(err, user) {
-      if (!user) {
-        return err;
-      }
-      let stockArray = [];
-      let stock1 = user.stock.filter(function(stock) {
-        return stock.date === newDate1;
-      });
-      let stock2 = user.stock.filter(function(stock) {
-        return stock.date === newDate2;
-      });
-
-      stockArray.push(stock1);
-      stockArray.push(stock2);
-
-      console.log(stockArray);
-      res.send(stockArray);
-
-      //logs { src: '/path/to/photo.png', title: 'My awesome photo' }
-    });
-  });
-
   app.get('/api/list_stock/:date1/:date2/:ticker', async (req, res) => {
     console.log('asd');
     let date1 = req.params.date1;
