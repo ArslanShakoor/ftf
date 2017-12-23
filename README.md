@@ -1,5 +1,5 @@
-# NVSTR
-his is assigment for nvstr
+# Fund that flip
+this is assigment for fund that flip
 
 ### How To run
 
@@ -12,4 +12,3 @@ his is assigment for nvstr
 4: `npm run dev`
 
 If you find any difficulty email me right away.
-# nvstr-pro
