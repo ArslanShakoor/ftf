@@ -5,6 +5,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import renderForm from '../utils/form/renderForm';
 import stockFields from './stockFields';
+import graph from './graph';
 import field from '../utils/form/field';
 import * as actions from '../../actions';
 import './stock.css';
@@ -98,7 +99,12 @@ class Main extends Component {
       return null;
     }
     return (
-      <ReactTable data={stocks} columns={columns} defaultPageSize={rows} />
+      <div>
+
+        {graph(stocks)}
+        <ReactTable data={stocks} columns={columns} defaultPageSize={rows} />
+
+      </div>
     );
   };
 
@@ -157,11 +163,13 @@ class Main extends Component {
         <div className="stock-section">
           <h1> CHECK LAST 10 CHANGES BETWEEN TWO DATES</h1>
           {this.form3(handleSubmit)}
+          <div className='linear-graph'/>
           <div className="result-table">
             {this.state.list
               ? this.renderForm1(this.firstTen(this.props.stock), columns, 10)
               : null}
           </div>
+
         </div>
       </div>
     );
