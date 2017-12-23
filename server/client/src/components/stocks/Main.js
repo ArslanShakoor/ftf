@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
+import columns from './tableHeader'
 import 'react-table/react-table.css';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
@@ -109,32 +110,7 @@ class Main extends Component {
   };
 
   render() {
-    const columns = [
-      {
-        Header: 'date',
-        accessor: 'date' // String-based value accessors!
-      },
-      {
-        Header: 'Low',
-        accessor: 'low' // String-based value accessors!
-      },
-      {
-        Header: 'High',
-        accessor: 'high'
-      },
-      {
-        Header: 'Open',
-        accessor: 'open'
-      },
-      {
-        Header: 'Volume',
-        accessor: 'volume'
-      },
-      {
-        Header: 'Close',
-        accessor: 'close'
-      }
-    ];
+   
     const { handleSubmit } = this.props;
     return (
       <div>
