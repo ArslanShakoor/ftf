@@ -11,7 +11,7 @@ class Header extends Component {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Link to={'/'}>
-            <Navbar.Brand>NVSTR</Navbar.Brand>
+            <Navbar.Brand>FTF</Navbar.Brand>
           </Link>
           <Navbar.Toggle />
         </Navbar.Header>
